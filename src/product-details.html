@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>تفاصيل المنتج - محلات أبودنيا لقطع غيار السيارات</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/app-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>محلات أبودنيا</h1>
+                <p>لقطع غيار السيارات</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html">الرئيسية</a></li>
+                    <li><a href="catalog.html" class="active">المنتجات</a></li>
+                    <li><a href="branches.html">الفروع</a></li>
+                    <li><a href="about.html">عن المحل</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile App Bar (phones only) -->
+    <div class="app-bar">
+        <button class="icon-btn" onclick="history.back()" aria-label="رجوع">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="app-title">تفاصيل المنتج</div>
+        <a class="icon-btn" href="catalog.html" aria-label="المنتجات">
+            <i class="fas fa-th-large"></i>
+        </a>
+    </div>
+
+    <main class="app-main" role="main">
+        <!-- Product Details Section -->
+        <section class="product-details-section">
+            <div class="container">
+                <div class="product-details-container">
+                    <div class="product-image">
+                        <img id="product-image" src="" alt="صورة المنتج">
+                    </div>
+                    <div class="product-info">
+                        <h1 id="product-name">اسم المنتج</h1>
+                        <div class="product-models">
+                            <h3>الموديلات المتوافقة:</h3>
+                            <ul id="product-models-list">
+                                <!-- Models will be loaded here -->
+                            </ul>
+                        </div>
+                        <div class="product-actions">
+                            <button id="whatsapp-inquiry" class="btn btn-primary">
+                                <i class="fab fa-whatsapp"></i> استعلام عبر واتساب
+                            </button>
+                            <button id="direct-call" class="btn btn-secondary">
+                                <i class="fas fa-phone"></i> اتصال مباشر
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                <div class="back-to-catalog">
+                    <a href="catalog.html" class="btn btn-outline"><i class="fas fa-arrow-right"></i> العودة إلى
+                        الكتالوج</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- WhatsApp Floating Button -->
+    <a href="https://wa.me/967772224899" class="whatsapp-float" target="_blank">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>محلات أبودنيا</h3>
+                    <p>أفضل قطع الغيار الأصلية لجميع موديلات السيارات</p>
+                </div>
+                <div class="footer-section">
+                    <h4>روابط سريعة</h4>
+                    <ul>
+                        <li><a href="index.html">الرئيسية</a></li>
+                        <li><a href="catalog.html">المنتجات</a></li>
+                        <li><a href="branches.html">الفروع</a></li>
+                        <li><a href="contact.html">اتصل بنا</a></li>
+                    </ul>
+                </div>
+                <div class="footer-section">
+                    <h4>تواصل معنا</h4>
+                    <p><i class="fas fa-phone"></i> 772224899</p>
+                    <p><i class="fab fa-whatsapp"></i> 772224899</p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 جميع الحقوق محفوظة - محلات أبودنيا لقطع غيار السيارات</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/product-details.js"></script>
+</body>
+
+</html>

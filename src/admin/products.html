@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
+    <title>إدارة المنتجات - لوحة إدارة محلات أبودنيا</title>
+    <link rel="stylesheet" href="../css/admin.css">
+    <link rel="stylesheet" href="../css/admin-theme.css">
+    <link rel="stylesheet" href="../css/app-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+    <style>
+        @media (max-width: 768px) {
+
+            .admin-header,
+            .admin-nav {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body class="admin-body">
+    <!-- Admin Header -->
+    <header class="admin-header">
+        <div class="container">
+            <div class="admin-logo">
+                <h1>محلات أبودنيا - لوحة الإدارة</h1>
+            </div>
+            <div class="admin-user">
+                <a href="../index.html" class="btn btn-website" target="_blank">
+                    <i class="fas fa-home"></i> زيارة الموقع
+                </a>
+                <span><i class="fas fa-user"></i> المشرف</span>
+                <a href="#" id="logoutBtn" class="btn btn-outline">تسجيل الخروج</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Admin Navigation -->
+    <nav class="admin-nav">
+        <div class="container">
+            <ul>
+                <li><a href="dashboard.html"><i class="fas fa-home"></i> الرئيسية</a></li>
+                <li><a href="products.html" class="active"><i class="fas fa-boxes"></i> المنتجات</a></li>
+                <li><a href="branches.html"><i class="fas fa-building"></i> الفروع</a></li>
+                <li><a href="settings.html"><i class="fas fa-cog"></i> الإعدادات</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Mobile App Bar (phones only) -->
+    <div class="app-bar">
+        <button class="icon-btn" onclick="location.href='dashboard.html'" aria-label="الرئيسية">
+            <i class="fas fa-home"></i>
+        </button>
+        <div class="app-title">إدارة المنتجات</div>
+        <a class="icon-btn" href="../index.html" aria-label="الموقع">
+            <i class="fas fa-globe"></i>
+        </a>
+    </div>
+
+    <!-- Admin Main Content -->
+    <main class="admin-main">
+        <div class="container">
+            <div class="admin-header-actions">
+                <h2 class="admin-title">إدارة المنتجات</h2>
+                <button id="addProductBtn" class="btn btn-primary">
+                    <i class="fas fa-plus"></i> إضافة منتج جديد
+                </button>
+            </div>
+
+            <!-- Search Box for Product Name and Models -->
+            <div class="admin-section">
+                <div class="search-box">
+                    <input type="text" id="productSearch" placeholder="ابحث باسم المنتج أو الموديلات المتوافقة...">
+                    <button id="searchProductButton"><i class="fas fa-search"></i> بحث</button>
+                </div>
+            </div>
+
+            <!-- Products Grid -->
+            <div class="admin-section">
+                <div id="productsGrid" class="products-grid">
+                    <!-- Product cards will be loaded here -->
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Add/Edit Product Modal -->
+    <div id="productModal" class="admin-modal">
+        <div class="admin-modal-content">
+            <div class="admin-modal-header">
+                <h3 id="modalTitle">إضافة منتج جديد</h3>
+                <span class="admin-modal-close">&times;</span>
+            </div>
+            <div class="admin-modal-body">
+                <form id="productForm">
+                    <input type="hidden" id="productId">
+                    <div class="form-group">
+                        <label for="productName">اسم المنتج</label>
+                        <input type="text" id="productName" name="productName" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="productModels">الموديلات المتوافقة</label>
+                        <textarea id="productModels" name="productModels" rows="3"
+                            placeholder="أدخل الموديلات مفصولة بفواصل"></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="productImage">صورة المنتج</label>
+                        <input type="file" id="productImage" name="productImage" accept="image/*">
+                        <small style="color:#64748b;display:block;margin-top:8px;">ارفع صورة بصيغة JPG أو PNG. سيتم
+                            حفظها داخل النظام.</small>
+                        <input type="hidden" id="currentProductImage" name="currentProductImage">
+                    </div>
+                    <div class="form-actions">
+                        <button type="button" class="btn btn-outline admin-modal-close">إلغاء</button>
+                        <button type="submit" class="btn btn-primary">حفظ المنتج</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <script src="../js/data.js"></script>
+    <script src="../js/admin.js"></script>
+    <script src="../js/admin-products.js"></script>
+</body>
+
+</html>

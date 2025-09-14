@@ -1,0 +1,160 @@
+/* App-like mobile UI for Gen Z aesthetics */
+:root {
+    --appbar-height: 56px;
+}
+
+/* Mobile App Bar */
+.app-bar {
+    position: sticky;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: var(--appbar-height);
+    display: grid;
+    grid-template-columns: 56px 1fr 56px;
+    align-items: center;
+    padding: 0 8px;
+    background: rgba(255, 255, 255, 0.85);
+    backdrop-filter: blur(10px) saturate(120%);
+    border-bottom: 1px solid rgba(0, 0, 0, 0.06);
+    z-index: 1000;
+}
+
+.app-bar .icon-btn {
+    width: 40px;
+    height: 40px;
+    border-radius: 12px;
+    border: 0;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(37, 99, 235, 0.08);
+    color: #2563eb;
+    transition: transform .2s ease, background-color .2s ease;
+}
+
+.app-bar .icon-btn:hover {
+    transform: translateY(-2px);
+    background: rgba(37, 99, 235, 0.12);
+}
+
+.app-bar .app-title {
+    text-align: center;
+    font-weight: 800;
+    font-size: 1.05rem;
+    color: #0f172a;
+}
+
+/* Show app-bar only on phones; desktop uses existing header */
+@media (min-width: 769px) {
+    .app-bar {
+        display: none;
+    }
+}
+
+/* Main wrapper to account for app-bar and bottom-nav paddings */
+.app-main {
+    padding: 12px 0 80px;
+}
+
+@supports (padding: max(0px)) {
+    .app-main {
+        padding-bottom: max(80px, env(safe-area-inset-bottom));
+    }
+}
+
+/* Cards refresh */
+.card,
+.product-card,
+.branch-card,
+.service-card,
+.category-card {
+    border-radius: 16px;
+    background: linear-gradient(180deg, rgba(255, 255, 255, .88), rgba(255, 255, 255, .92));
+    border: 1px solid rgba(15, 23, 42, 0.06);
+    box-shadow: 0 6px 24px rgba(2, 8, 23, 0.06);
+}
+
+.product-card .product-image {
+    border-radius: 14px;
+    overflow: hidden;
+}
+
+.product-card .product-image img {
+    display: block;
+    width: 100%;
+    height: auto;
+}
+
+.product-card .product-info h3 {
+    font-weight: 800;
+}
+
+/* Search box refresh */
+.search-box {
+    display: flex;
+    gap: 10px;
+    background: #fff;
+    border: 1px solid rgba(2, 8, 23, 0.08);
+    padding: 10px;
+    border-radius: 14px;
+    box-shadow: 0 4px 18px rgba(2, 8, 23, 0.05);
+}
+
+.search-box input {
+    flex: 1;
+    border: 0;
+    outline: 0;
+    font-size: 1rem;
+    background: transparent;
+}
+
+.search-box button {
+    border-radius: 12px;
+    padding: 12px 16px;
+}
+
+/* Chips & badges */
+.chips {
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+.chip {
+    padding: 8px 12px;
+    border-radius: 9999px;
+    background: rgba(37, 99, 235, .08);
+    color: #2563eb;
+    font-weight: 700;
+    font-size: .8rem;
+}
+
+.badge {
+    padding: 6px 10px;
+    border-radius: 10px;
+    background: #0ea5e9;
+    color: #fff;
+    font-weight: 800;
+    font-size: .7rem;
+}
+
+/* Footer polish */
+.footer {
+    background: linear-gradient(180deg, rgba(248, 250, 252, 0.7), rgba(255, 255, 255, 0.9));
+    backdrop-filter: blur(6px);
+}
+
+/* Motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation: none !important;
+        transition: none !important;
+    }
+}
+
+/* Images */
+img[loading="lazy"] {
+    content-visibility: auto;
+}

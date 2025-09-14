@@ -1,0 +1,683 @@
+/* Modern Classic Theme for Abounia Auto Parts (RTL) */
+/* This file overrides and refines the base styles in style.css */
+
+:root {
+    /* Palette: Deep Navy + Soft Gold */
+    --primary-color: #ef4444;
+    /* Light red */
+    --primary-hover: #dc2626;
+    /* Darker red */
+    --secondary-color: #c8a24b;
+    /* Gold */
+    --dark-color: #0f172a;
+    /* Near-black for headings */
+    --light-color: #f5f7fb;
+    /* Page background */
+    --gray-color: #6b7280;
+    /* Muted text */
+    --white-color: #ffffff;
+    --border-radius: 14px;
+    /* Softer rounded corners */
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --box-shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.12);
+    --transition: all .25s ease;
+}
+
+/* Typography refinements */
+body {
+    letter-spacing: 0.1px;
+    background: var(--light-color);
+}
+
+h1,
+h2,
+h3,
+h4 {
+    color: var(--dark-color);
+}
+
+/* Header */
+.header {
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: saturate(1.2) blur(10px);
+    border-bottom: 1px solid rgba(239, 68, 68, 0.08);
+}
+
+.logo h1 {
+    letter-spacing: 0.2px;
+}
+
+.nav ul {
+    gap: 8px;
+}
+
+.nav ul li a {
+    padding: 10px 14px;
+}
+
+.nav ul li a::after {
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+
+.nav ul li a:hover,
+.nav ul li a.active {
+    background-color: rgba(200, 162, 75, 0.12);
+    color: var(--primary-color);
+}
+
+/* Hero */
+.hero {
+    height: 440px;
+    background: radial-gradient(1200px 400px at 60% -10%, rgba(200, 162, 75, 0.18), transparent),
+        linear-gradient(135deg, rgba(239, 68, 68, 0.92), rgba(239, 68, 68, 0.78)),
+        url('https://placehold.co/1600x800/ef4444/ffffff?text=قطع+غيار+أصلية') center/cover no-repeat;
+}
+
+.hero-content h2 {
+    font-size: 2.1rem;
+}
+
+.hero-content p {
+    font-size: 1.05rem;
+    opacity: .95;
+}
+
+/* Buttons */
+.btn {
+    border-radius: 12px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #f87171);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-hover), #ef4444);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-color), #b68e35);
+    color: #1b1b1b;
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #b9913a, #a67f29);
+}
+
+.btn-outline {
+    border: 2px solid var(--secondary-color);
+    color: var(--primary-color);
+}
+
+/* Section Title */
+.section-title {
+    font-weight: 800;
+}
+
+.section-title::after {
+    width: 80px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+}
+
+/* Featured Categories */
+.category-card {
+    /* Frosted glass */
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    /* slate-300 */
+}
+
+.category-card:hover {
+    transform: translateY(-6px) scale(1.015);
+}
+
+.category-card h3 {
+    color: var(--dark-color);
+}
+
+/* Search section */
+.search-section {
+    padding: 20px 0 6px;
+}
+
+.search-box {
+    display: flex;
+    align-items: center;
+    border-radius: 14px;
+    /* Frosted glass */
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+}
+
+.search-box input {
+    flex: 1;
+    padding: 14px 16px;
+    border: none;
+    outline: none;
+    font-size: 0.95rem;
+}
+
+.search-box button {
+    padding: 12px 18px;
+    background: var(--secondary-color);
+    color: #1b1b1b;
+    border: none;
+    min-height: 48px;
+}
+
+.search-box button:hover {
+    filter: brightness(0.95);
+}
+
+/* Products */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.product-card {
+    /* Frosted glass */
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.product-card .product-image {
+    position: relative;
+    aspect-ratio: 1/1;
+    background: #f2f4f8;
+}
+
+.product-card .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card .product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background: linear-gradient(135deg, var(--secondary-color), #b68e35);
+    color: #1b1b1b;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(27, 27, 27, 0.08);
+}
+
+.product-card .product-info {
+    padding: 14px;
+}
+
+.product-card .product-info h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+}
+
+.product-card .product-models {
+    color: var(--gray-color);
+    font-size: .85rem;
+}
+
+.product-card .product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Product details */
+.product-details-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 24px;
+}
+
+.product-image {
+    background: #fff;
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    border-radius: 14px;
+    box-shadow: var(--box-shadow);
+    padding: 12px;
+}
+
+.product-info h1 {
+    font-size: 1.5rem;
+    margin-bottom: 10px;
+}
+
+.product-models h3 {
+    margin: 12px 0 8px;
+}
+
+.product-actions .btn {
+    min-width: 180px;
+}
+
+@media (max-width: 900px) {
+    .product-details-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Branches */
+.branch-card {
+    background: #fff;
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    border-radius: 14px;
+    box-shadow: var(--box-shadow);
+    padding: 16px;
+    margin-bottom: 14px;
+    transition: var(--transition);
+}
+
+.branch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.branch-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.branch-name {
+    font-size: 1.05rem;
+}
+
+.branch-phone {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.branch-address {
+    color: var(--gray-color);
+    display: flex;
+    gap: 8px;
+}
+
+.map-placeholder {
+    height: 160px;
+    border-radius: 12px;
+    background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 10px, #eef2f7 10px, #eef2f7 20px);
+    display: grid;
+    place-items: center;
+    color: #637084;
+    font-size: .9rem;
+    margin-top: 10px;
+}
+
+/* About/Services */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 16px;
+}
+
+.service-card {
+    background: #fff;
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    border-radius: 14px;
+    box-shadow: var(--box-shadow);
+    padding: 18px;
+    transition: var(--transition);
+    text-align: center;
+}
+
+.service-card i {
+    font-size: 1.8rem;
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.service-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Contact */
+.contact-container {
+    display: grid;
+    grid-template-columns: 1.1fr 1fr;
+    gap: 24px;
+}
+
+.contact-info,
+.contact-form {
+    background: #fff;
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    border-radius: 14px;
+    box-shadow: var(--box-shadow);
+    padding: 18px;
+}
+
+.contact-item {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 14px;
+    color: var(--gray-color);
+}
+
+.contact-item i {
+    color: var(--primary-color);
+    margin-top: 4px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 6px;
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 12px 14px;
+    border-radius: 10px;
+    border: 1px solid rgba(15, 61, 95, 0.12);
+    outline: none;
+    transition: var(--transition);
+    background: #fff;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 4px rgba(15, 61, 95, 0.1);
+}
+
+@media (max-width: 900px) {
+    .contact-container {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Bottom Navigation (mobile) */
+.bottom-nav {
+    position: fixed;
+    inset-inline: 0;
+    bottom: 10px;
+    margin-inline: auto;
+    z-index: 110;
+    width: min(92%, 720px);
+    height: 64px;
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.9);
+    backdrop-filter: blur(10px) saturate(1.2);
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.12);
+}
+
+.bottom-nav a {
+    display: grid;
+    place-items: center;
+    gap: 2px;
+    color: #334155;
+    text-decoration: none;
+    font-size: 0.75rem;
+    padding-top: 6px;
+}
+
+.bottom-nav a .icon {
+    font-size: 1.1rem;
+}
+
+.bottom-nav a.active {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+@media (min-width: 992px) {
+    .bottom-nav {
+        display: none;
+    }
+}
+
+/* WhatsApp Floating Button */
+.whatsapp-float {
+    position: fixed;
+    bottom: 86px;
+    inset-inline-end: 16px;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    color: #fff;
+    background: linear-gradient(135deg, #25d366, #128c7e);
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.15);
+}
+
+.whatsapp-float:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Footer */
+.footer {
+    background: #2f4c65;
+    color: #e5e7eb;
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.footer a {
+    color: #d1d5db;
+}
+
+.footer a:hover {
+    color: var(--secondary-color);
+}
+
+.footer .footer-bottom {
+    border-top: 1px solid rgba(255, 255, 255, 0.06);
+    margin-top: 14px;
+    padding-top: 12px;
+    color: #9ca3af;
+}
+
+/* Utilities */
+.text-center {
+    text-align: center;
+}
+
+/* Smooth page transition (used in main.js) */
+body.fade-out {
+    opacity: 0;
+    transition: opacity .3s ease;
+}
+
+/* Icon enhancements: gradient fill + glow */
+.icon-gradient {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.icon-glow {
+    color: var(--primary-color);
+    filter: drop-shadow(0 2px 6px rgba(15, 61, 95, 0.35));
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.icon-glow:hover {
+    transform: translateY(-2px) scale(1.05);
+    filter: drop-shadow(0 4px 12px rgba(200, 162, 75, 0.55));
+}
+
+/* Smooth icon interactions on common placements */
+.btn i,
+.nav a i,
+.bottom-nav a .icon,
+.branch-phone i,
+.contact-item i,
+.service-card i {
+    transition: transform .2s ease, filter .2s ease;
+}
+
+.btn:hover i,
+.nav a:hover i,
+.bottom-nav a:hover .icon {
+    transform: translateY(-1px) scale(1.08);
+    filter: drop-shadow(0 2px 6px rgba(0, 0, 0, .15));
+}
+
+/* Hero particles overlay */
+.hero {
+    position: relative;
+    overflow: hidden;
+}
+
+.hero .particles-canvas {
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    opacity: .35;
+    mix-blend-mode: screen;
+}
+
+/* Mobile refinements: header, icons, and typography */
+@media (max-width: 768px) {
+
+    /* نص عام أصغر قليلاً */
+    body {
+        font-size: 15px;
+    }
+
+    /* الهيدر */
+    .header {
+        padding: 8px 0;
+    }
+
+    .logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .nav ul {
+        gap: 6px;
+    }
+
+    .nav ul li a {
+        padding: 8px 10px;
+        font-size: .95rem;
+    }
+
+    .nav ul li a i {
+        font-size: 1rem;
+    }
+
+    /* البانر */
+    .hero {
+        height: 360px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.5rem;
+    }
+
+    .hero-content p {
+        font-size: .95rem;
+    }
+
+    /* العناوين والأزرار */
+    .section-title {
+        font-size: 1.2rem;
+    }
+
+    .btn {
+        padding: 10px 14px;
+        font-size: .95rem;
+    }
+
+    /* الأيقونات في المواقع الشائعة */
+    .btn i,
+    .nav a i,
+    .bottom-nav a .icon,
+    .branch-phone i,
+    .contact-item i,
+    .service-card i {
+        font-size: 1rem;
+    }
+
+    /* نصوص داخل البطاقات */
+    .product-card .product-info h3 {
+        font-size: .95rem;
+    }
+
+    .branch-name {
+        font-size: 1rem;
+    }
+
+    .branch-phone {
+        font-size: .95rem;
+    }
+
+    .contact-item {
+        font-size: .95rem;
+    }
+
+    /* شريط التنقل السفلي */
+    .bottom-nav {
+        height: 56px;
+    }
+
+    .bottom-nav a {
+        font-size: .7rem;
+        padding-top: 4px;
+    }
+
+    .bottom-nav a .icon {
+        font-size: 1rem;
+    }
+
+    /* حشوات عامة أضيق */
+    .container {
+        padding-inline: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .nav ul li a {
+        padding: 7px 9px;
+        font-size: .9rem;
+    }
+
+    .hero {
+        height: 320px;
+    }
+
+    .hero-content h2 {
+        font-size: 1.25rem;
+    }
+
+    .hero-content p {
+        font-size: .9rem;
+    }
+}

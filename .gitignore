@@ -1,0 +1,36 @@
+# Node
+node_modules/
+npm-debug.log*
+yarn-error.log*
+
+# Build/Cache
+build/
+dist/
+.cache/
+
+# Environment
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+
+# OS
+.DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Database (keep local only)
+data/*.sqlite*
+data/*.db
+
+# Uploads (optional - keep repo light)
+src/uploads/images/*
+
+# Misc
+*.tmp
+*.swp

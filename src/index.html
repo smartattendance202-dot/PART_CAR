@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="theme-color" content="#2563eb">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    <title>محلات أبودنيا لقطع غيار السيارات</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/theme.css">
+    <link rel="stylesheet" href="css/app-mobile.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+Arabic:wght@300;400;500;700&display=swap"
+        rel="stylesheet">
+</head>
+
+<body>
+    <!-- Header Section -->
+    <header class="header">
+        <div class="container">
+            <div class="logo">
+                <h1>محلات أبودنيا</h1>
+                <p>لقطع غيار السيارات</p>
+            </div>
+            <nav class="nav">
+                <ul>
+                    <li><a href="index.html" class="active">الرئيسية</a></li>
+                    <li><a href="catalog.html">المنتجات</a></li>
+                    <li><a href="branches.html">الفروع</a></li>
+                    <li><a href="about.html">عن المحل</a></li>
+                    <li><a href="contact.html">اتصل بنا</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Mobile App Bar (phones only) -->
+    <div class="app-bar">
+        <button class="icon-btn" onclick="history.back()" aria-label="رجوع">
+            <i class="fas fa-chevron-right"></i>
+        </button>
+        <div class="app-title">محلات أبودنيا</div>
+        <a class="icon-btn" href="contact.html" aria-label="اتصل بنا">
+            <i class="fas fa-phone"></i>
+        </a>
+    </div>
+
+    <main class="app-main" role="main">
+        <!-- Hero Section -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero-content">
+                    <h2>مرحباً بكم في محلات أبودنيا</h2>
+                    <p>أفضل قطع الغيار الأصلية لجميع موديلات السيارات</p>
+                    <a href="catalog.html" class="btn btn-primary">تصفح المنتجات</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Categories -->
+        <section class="featured-categories">
+            <div class="container">
+                <h2 class="section-title">تصنيفات رئيسية</h2>
+                <div class="categories-grid">
+                    <div class="category-card">
+                        <i class="fas fa-car"></i>
+                        <h3>قطع محركات</h3>
+                    </div>
+                    <div class="category-card">
+                        <span class="fa-stack fa-lg icon-glow">
+                            <i class="fa-solid fa-circle fa-stack-2x" style="color:#1f2937;"></i>
+                            <i class="fa-solid fa-compact-disc fa-stack-1x icon-gradient"></i>
+                        </span>
+                        <h3>إطارات وجنوط</h3>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-oil-can"></i>
+                        <h3>زيوت وسوائل</h3>
+                    </div>
+                    <div class="category-card">
+                        <i class="fas fa-car-battery"></i>
+                        <h3>بطاريات وكهرباء</h3>
+                    </div>
+                    <!-- زجاج سيارات -->
+                    <div class="category-card">
+                        <span class="fa-stack fa-lg icon-glow">
+                            <i class="fa-solid fa-circle fa-stack-2x" style="color:#1f2937;"></i>
+                            <i class="fa-solid fa-windshield fa-stack-1x icon-gradient"></i>
+                        </span>
+                        <h3>زجاج سيارات</h3>
+                    </div>
+                    <!-- قطع أصلية -->
+                    <div class="category-card">
+                        <span class="fa-stack fa-lg icon-glow">
+                            <i class="fa-solid fa-circle fa-stack-2x" style="color:#1f2937;"></i>
+                            <i class="fa-solid fa-certificate fa-stack-1x icon-gradient"></i>
+                        </span>
+                        <h3>قطع أصلية</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Products -->
+        <section class="featured-products">
+            <div class="container">
+                <h2 class="section-title">منتجات مميزة</h2>
+                <div class="products-grid" id="featured-products">
+                    <!-- Products will be loaded here dynamically -->
+                </div>
+                <div class="text-center">
+                    <a href="catalog.html" class="btn btn-secondary">عرض جميع المنتجات</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- WhatsApp Floating Button -->
+        <a href="https://wa.me/967772224899" class="whatsapp-float" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+
+        <!-- Footer -->
+        <footer class="footer">
+            <div class="container">
+                <div class="footer-content">
+                    <div class="footer-section">
+                        <h3>محلات أبودنيا</h3>
+                        <p>أفضل قطع الغيار الأصلية لجميع موديلات السيارات</p>
+                    </div>
+                    <div class="footer-section">
+                        <h4>روابط سريعة</h4>
+                        <ul>
+                            <li><a href="index.html">الرئيسية</a></li>
+                            <li><a href="catalog.html">المنتجات</a></li>
+                            <li><a href="branches.html">الفروع</a></li>
+                            <li><a href="contact.html">اتصل بنا</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-section">
+                        <h4>تواصل معنا</h4>
+                        <p><i class="fas fa-phone"></i> 772224899</p>
+                        <p><i class="fab fa-whatsapp"></i> 772224899</p>
+                    </div>
+                </div>
+                <div class="footer-bottom">
+                    <p>&copy; 2025 جميع الحقوق محفوظة - محلات أبودنيا لقطع غيار السيارات</p>
+                </div>
+            </div>
+        </footer>
+    </main>
+
+    <script src="js/data.js"></script>
+    <script src="js/main.js"></script>
+</body>
+
+</html>

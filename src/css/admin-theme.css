@@ -1,0 +1,512 @@
+/* Admin Theme Overrides to match user theme (RTL) */
+/* This file aligns admin pages with src/css/theme.css look-and-feel */
+
+:root {
+    /* Match theme.css palette */
+    --primary-color: #ef4444;
+    /* Light red */
+    --primary-hover: #dc2626;
+    /* Darker red */
+    --secondary-color: #c8a24b;
+    /* Gold */
+    --dark-color: #0f172a;
+    /* Near-black for headings */
+    --light-color: #f5f7fb;
+    /* Page background */
+    --gray-color: #6b7280;
+    /* Muted text */
+    --white-color: #ffffff;
+    --border-radius: 14px;
+    /* Softer rounded corners */
+    --box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    --box-shadow-hover: 0 14px 36px rgba(0, 0, 0, 0.12);
+    --transition: all .25s ease;
+}
+
+/* Base */
+body.admin-body {
+    background: var(--light-color);
+}
+
+/* Header - polished mobile-first layout */
+.admin-header {
+    background: rgba(255, 255, 255, 0.9) !important;
+    -webkit-backdrop-filter: saturate(1.2) blur(10px);
+    backdrop-filter: saturate(1.2) blur(10px);
+    border-bottom: 1px solid rgba(239, 68, 68, 0.08);
+    box-shadow: none;
+}
+
+.admin-header .container {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 12px;
+    padding-block: 10px;
+}
+
+.admin-logo h1 {
+    color: var(--dark-color);
+    letter-spacing: 0.2px;
+    font-weight: 800;
+    font-size: clamp(1rem, 2.8vw, 1.35rem);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.admin-user {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+}
+
+.admin-user .btn {
+    padding: 10px 12px;
+    font-size: .95rem;
+    min-height: 40px;
+}
+
+.admin-user span {
+    color: var(--gray-color);
+    font-weight: 600;
+    font-size: .95rem;
+    display: none;
+    /* hide label on mobile for space */
+}
+
+/* Compact icons for header action buttons */
+.admin-user .btn i {
+    font-size: 1rem;
+}
+
+/* Tablet and up: show username and loosen spacing */
+@media (min-width: 769px) {
+    .admin-header .container {
+        grid-template-columns: 1fr auto;
+        gap: 14px;
+    }
+
+    .admin-user span {
+        display: inline-flex;
+    }
+
+    .admin-user .btn {
+        min-height: 44px;
+    }
+}
+
+/* Top nav to look like site nav */
+.admin-nav {
+    background: transparent;
+    border-bottom: none;
+}
+
+.admin-nav ul {
+    display: flex;
+    gap: 8px;
+}
+
+.admin-nav ul li a {
+    display: inline-block;
+    padding: 10px 14px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
+    overflow: hidden;
+    font-weight: 600;
+    color: var(--dark-color);
+}
+
+.admin-nav ul li a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 50%;
+    width: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    transition: var(--transition);
+    transform: translateX(50%);
+}
+
+.admin-nav ul li a:hover::after,
+.admin-nav ul li a.active::after {
+    width: 70%;
+}
+
+.admin-nav ul li a:hover,
+.admin-nav ul li a.active {
+    background-color: rgba(200, 162, 75, 0.12);
+    color: var(--primary-color);
+}
+
+/* Buttons - align with theme */
+.btn {
+    border-radius: 12px;
+    /* slightly smaller than 14 for buttons */
+    min-height: 48px;
+}
+
+.btn-primary {
+    background: linear-gradient(135deg, var(--primary-color), #f87171) !important;
+    color: var(--white-color) !important;
+    box-shadow: var(--box-shadow);
+}
+
+.btn-primary:hover {
+    background: linear-gradient(135deg, var(--primary-hover), #ef4444) !important;
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background: linear-gradient(135deg, var(--secondary-color), #b68e35) !important;
+    color: #1b1b1b !important;
+    box-shadow: var(--box-shadow);
+}
+
+.btn-secondary:hover {
+    background: linear-gradient(135deg, #b9913a, #a67f29) !important;
+    box-shadow: var(--box-shadow-hover);
+    transform: translateY(-2px);
+}
+
+.btn-outline {
+    border: 2px solid var(--secondary-color) !important;
+    color: var(--primary-color) !important;
+    background: transparent !important;
+}
+
+.btn-outline:hover {
+    background: var(--primary-color) !important;
+    color: var(--white-color) !important;
+}
+
+/* Section titles like .section-title */
+.admin-title {
+    text-align: right;
+    margin: 20px 0 24px;
+    font-size: 1.6rem;
+    color: var(--dark-color);
+    position: relative;
+    font-weight: 800;
+}
+
+.admin-title::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    right: 0;
+    width: 80px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--secondary-color), var(--primary-color));
+    border-radius: 2px;
+}
+
+/* Cards to match theme look */
+.admin-section,
+.admin-table-container,
+.stat-card {
+    background: #fff;
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    border-radius: 14px;
+    box-shadow: var(--box-shadow);
+}
+
+.stat-card {
+    transition: var(--transition);
+}
+
+.stat-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+/* Stat icon background helpers mapped to theme palette */
+.bg-primary {
+    background: linear-gradient(135deg, var(--primary-color), #f87171) !important;
+    color: #fff;
+}
+
+.bg-success {
+    background: linear-gradient(135deg, #10b981, #059669) !important;
+    color: #fff;
+}
+
+.bg-info {
+    background: linear-gradient(135deg, #60a5fa, #3b82f6) !important;
+    color: #fff;
+}
+
+.bg-warning {
+    background: linear-gradient(135deg, #f59e0b, #d97706) !important;
+    color: #fff;
+}
+
+/* Tables - subtle borders */
+.admin-table thead th {
+    background: #fafafa;
+    color: var(--dark-color);
+}
+
+.admin-table th,
+.admin-table td {
+    border-bottom: 1px solid rgba(15, 61, 95, 0.06);
+}
+
+/* Forms */
+.form-group label {
+    font-weight: 600;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    border: 1px solid rgba(15, 61, 95, 0.12) !important;
+    border-radius: 10px;
+}
+
+/* Search box to match site */
+.search-box {
+    border-radius: 14px;
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: var(--box-shadow);
+}
+
+.search-box button {
+    background: var(--secondary-color) !important;
+    color: #1b1b1b !important;
+}
+
+/* Utilities spacing similar to theme */
+.container {
+    max-width: 1200px;
+}
+
+/* Products grid/cards for admin */
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 18px;
+}
+
+.product-card {
+    background: rgba(255, 255, 255, 0.14);
+    -webkit-backdrop-filter: blur(10px) saturate(120%);
+    backdrop-filter: blur(10px) saturate(120%);
+    border-radius: 14px;
+    border: 1px solid rgba(148, 163, 184, 0.18);
+    box-shadow: var(--box-shadow);
+    overflow: hidden;
+    transition: var(--transition);
+}
+
+.product-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.product-card .product-image {
+    position: relative;
+    aspect-ratio: 1/1;
+    background: #f2f4f8;
+}
+
+.product-card .product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.product-card .product-badge {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    z-index: 2;
+    background: linear-gradient(135deg, var(--secondary-color), #b68e35);
+    color: #1b1b1b;
+    padding: 6px 10px;
+    font-size: 0.75rem;
+    border-radius: 999px;
+    border: 1px solid rgba(27, 27, 27, 0.08);
+}
+
+.product-card .product-info {
+    padding: 14px;
+}
+
+.product-card .product-info h3 {
+    font-size: 1rem;
+    margin-bottom: 6px;
+    color: var(--dark-color);
+}
+
+.product-card .product-models {
+    color: var(--gray-color);
+    font-size: .85rem;
+}
+
+.product-card .product-actions {
+    display: flex;
+    gap: 8px;
+    margin-top: 12px;
+}
+
+/* Branches grid/cards for admin */
+.branches-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 18px;
+}
+
+.branch-card {
+    background: #fff;
+    border: 1px solid rgba(15, 61, 95, 0.06);
+    border-radius: 14px;
+    box-shadow: var(--box-shadow);
+    padding: 16px;
+    transition: var(--transition);
+}
+
+.branch-card:hover {
+    transform: translateY(-6px);
+    box-shadow: var(--box-shadow-hover);
+}
+
+.branch-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 8px;
+}
+
+.branch-name {
+    font-size: 1.05rem;
+    color: var(--dark-color);
+}
+
+.branch-phone {
+    color: var(--primary-color);
+    font-weight: 700;
+}
+
+.branch-details {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.branch-address {
+    color: var(--gray-color);
+    display: flex;
+    gap: 8px;
+}
+
+.map-placeholder {
+    height: 140px;
+    border-radius: 12px;
+    background: repeating-linear-gradient(45deg, #f3f4f6, #f3f4f6 10px, #eef2f7 10px, #eef2f7 20px);
+    display: grid;
+    place-items: center;
+    color: #637084;
+    font-size: .9rem;
+    margin-top: 6px;
+}
+
+@media (max-width: 768px) {
+
+    /* نص عام أصغر قليلاً للمشرف */
+    body.admin-body {
+        font-size: 15px;
+    }
+
+    /* الهيدر والقائمة */
+    .admin-header {
+        padding: 8px 0;
+    }
+
+    .admin-logo h1 {
+        font-size: 1.25rem;
+    }
+
+    .admin-nav ul {
+        gap: 6px;
+    }
+
+    .admin-nav ul li a {
+        padding: 8px 10px;
+        font-size: .95rem;
+    }
+
+    /* العنوان الرئيسي */
+    .admin-title {
+        font-size: 1.3rem;
+        margin: 16px 0 18px;
+    }
+
+    /* الأزرار والحقول */
+    .btn {
+        padding: 10px 14px;
+        font-size: .95rem;
+        min-height: 44px;
+    }
+
+    .search-box input {
+        font-size: .95rem;
+        padding: 12px 14px;
+    }
+
+    /* بطاقات النصوص */
+    .product-card .product-info h3 {
+        font-size: .95rem;
+    }
+
+    .branch-name {
+        font-size: 1rem;
+    }
+
+    .branch-phone {
+        font-size: .95rem;
+    }
+
+    /* حشوات عامة */
+    .container {
+        padding-inline: 14px;
+    }
+}
+
+@media (max-width: 480px) {
+    .products-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    .branches-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+    }
+
+    /* مزيد من التصغير للأحجام الصغيرة جداً */
+    .admin-logo h1 {
+        font-size: 1.1rem;
+    }
+
+    .admin-nav ul li a {
+        padding: 7px 9px;
+        font-size: .9rem;
+    }
+
+    .admin-title {
+        font-size: 1.15rem;
+    }
+
+    .btn {
+        font-size: .9rem;
+        min-height: 42px;
+    }
+}
